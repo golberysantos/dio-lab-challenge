@@ -26,6 +26,26 @@ Dashboard de desempenho e análises.
 - Mapa de Lucro por País
 - Gráfico de Pizza com Lucro por Segmento
 
+## 📁 Estrutura do Projeto
+
+```text
+.
+├── power_bi_analyst/
+│   ├── Análise de Dados com SQL/
+│   │   ├── sql_script_mysql.sql
+│   │   └── sql_script_sqlite.sql
+│   ├── dataset/
+│   │   ├── Business Unit.csv
+│   │   ├── Customer.csv
+│   │   ├── Dates.csv
+│   │   └── financial_sample.xlsx
+│   └── sample_financial_desafio_1.pbix
+├── .gitignore
+└── README.md
+```
+
+
+
 ### Ferramentas
 
 - Power BI Desktop
