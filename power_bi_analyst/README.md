@@ -38,10 +38,55 @@ Dashboard de vendas.
 Dashboard de Vendas por País.
 
 
+<br>
+
+## DESAFIO III
+
+O desafio consistiu em:
+
+- Criar uma instância MySQL no Azure
+- Configurar regras de firewall para acesso ao banco de dados
+- Conectar ao MySQL utilizando MySQL Workbench
+- Integrar o Power BI ao banco MySQL hospedado no Azure
+- Realizar transformações e tratamento dos dados utilizando Power Query
+
+### Transformações Realizadas
+
+- Verificação dos cabeçalhos das tabelas
+- Ajuste dos tipos de dados
+- Conversão dos valores monetários para tipo decimal
+- Análise e tratamento de valores nulos
+- Verificação de colaboradores sem gerente associado
+- Verificação de departamentos sem gerente
+- Validação das horas registradas nos projetos
+- Separação de colunas compostas
+- Criação de coluna com nome completo dos colaboradores
+- Mesclagem das tabelas Employee e Department
+- Associação de colaboradores aos respectivos departamentos
+- Associação de colaboradores aos respectivos gerentes
+- Criação de identificador único utilizando Departamento + Localização
+- Agrupamento de colaboradores por gerente
+- Remoção de colunas desnecessárias para otimização do modelo
+
+### Consulta SQL Utilizada
+
+```sql
+SELECT
+    e.Ssn,
+    CONCAT(e.Fname, ' ', e.Lname) AS Employee_Name,
+    CONCAT(m.Fname, ' ', m.Lname) AS Manager_Name
+FROM employee e
+LEFT JOIN employee m
+ON e.Super_ssn = m.Ssn;
+```
+
+
+
 ## 📁 Estrutura do Projeto
+<br>
 
 ```text
-.
+
 ├── power_bi_analyst/
 │   ├── Análise de Dados com SQL/
 │   │   ├── sql_script_mysql.sql
@@ -52,17 +97,22 @@ Dashboard de Vendas por País.
 │   │   ├── Dates.csv
 │   │   └── financial_sample.xlsx
 │   ├── sample_financial_desafio_1.pbix
-│   └── relatrio_criativo_desafio_2.pbix
+│   ├── relatorio_criativo_desafio_2.pbix
+│   └── mysql_azure_desafio_3.pbix
 ├── .gitignore
 └── README.md
 ```
 
 
 
-
 ### Ferramentas
 
+<br>
+
 - Power BI Desktop
+- Microsoft Azure
+- MySQL
+- MySQL Workbench
 - GitHub
 
 ### Autor
